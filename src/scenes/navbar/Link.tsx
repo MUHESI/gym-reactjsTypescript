@@ -1,4 +1,5 @@
 import { SelectedPage } from "@/shared/types";
+import { useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 type Props = {

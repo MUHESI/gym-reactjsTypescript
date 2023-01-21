@@ -20,11 +20,11 @@ const Home = ({ setSelectedPage }: Props) => {
     <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
       {/* IMAGE AND MAIN HEADER */}
       <motion.div
-        className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
+        className="mx-auto w-5/6 flex-wrap items-center justify-center md:flex md:h-5/6"
         onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
       >
         {/* MAIN HEADER */}
-        <div className="z-10 mt-32 md:basis-3/5">
+        <div className="z-10 mt-32 basis-2/5">
           {/* HEADINGS */}
           <motion.div
             className="md:-mt-20"
@@ -51,8 +51,9 @@ const Home = ({ setSelectedPage }: Props) => {
           </motion.div>
 
           {/* ACTIONS */}
+
           <motion.div
-            className="mt-8 flex items-center gap-8"
+            className="mt-8 flex  items-center gap-8 "
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
@@ -62,6 +63,11 @@ const Home = ({ setSelectedPage }: Props) => {
               visible: { opacity: 1, x: 0 },
             }}
           >
+            {/* {isAboveMediumScreens && (
+              <ActionButton setSelectedPage={setSelectedPage}>
+                Join Now
+              </ActionButton>
+            )} */}
             <ActionButton setSelectedPage={setSelectedPage}>
               Join Now
             </ActionButton>
@@ -77,25 +83,27 @@ const Home = ({ setSelectedPage }: Props) => {
 
         {/* IMAGE */}
         <div
-          className="flex basis-3/5 justify-center md:z-10
-              md:ml-40 md:mt-16 md:justify-items-end"
+          className="flex justify-center md:z-10 md:ml-40 md:mt-16 md:basis-2/5
+          md:justify-items-end"
         >
           <img alt="home-pageGraphic" src={HomePageGraphic} />
         </div>
       </motion.div>
 
       {/* SPONSORS */}
-      {isAboveMediumScreens && (
-        <div className="h-[150px] w-full bg-primary-100 py-10">
-          <div className="mx-auto w-5/6">
-            <div className="flex w-3/5 items-center justify-between gap-8">
-              <img alt="redbull-sponsor" src={SponsorRedBull} />
-              <img alt="forbes-sponsor" src={SponsorForbes} />
-              <img alt="fortune-sponsor" src={SponsorFortune} />
+      <div className="">
+        {isAboveMediumScreens && (
+          <div className=" h-[130px] w-full bg-primary-100 py-10">
+            <div className="mx-auto w-5/6">
+              <div className="flex w-3/5 items-center justify-between gap-8">
+                <img alt="redbull-sponsor" src={SponsorRedBull} />
+                <img alt="forbes-sponsor" src={SponsorForbes} />
+                <img alt="fortune-sponsor" src={SponsorFortune} />
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </section>
   );
 };
