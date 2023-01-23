@@ -9,14 +9,14 @@ module.exports = {
         "gray-100": "#DFCCCC",
         "gray-500": "#5E0000",
         "primary-100": "#FFE1E0",
-        "primary-300": "#FFA6A3",
-        "primary-500": "#FF6B66",
+        "primary-300": "#FFA6B3",
+        "primary-500": "#FF6B55",
         "secondary-400": "#FFCD5B",
         "secondary-500": "#FFC132",
       },
       backgroundImage: (theme) => ({
         "gradient-yellowred":
-          "linear-gradient(90deg, #FF616A 0%, #FFC837 100%)",
+          "linear-gradient(90deg, #FF616A 8%, #FFC837 100%)",
         "mobile-home": "url('./assets/HomePageGraphic.png')",
       }),
       fontFamily: {
