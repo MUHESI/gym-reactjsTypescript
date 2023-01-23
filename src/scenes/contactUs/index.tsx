@@ -68,7 +68,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
             <form
               target="_blank"
               onSubmit={onSubmit}
-              action="https://formsubmit.co/el/gusono"
+              action="https://formsubmit.co/e8a5bdfa807605332f809e5656e27c6e"
               method="POST"
             >
               <input
@@ -123,14 +123,13 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                     "Max length is 2000 char."}
                 </p>
               )}
-              <div className="mainBtn">
-                <button
-                  type="submit"
-                  className="btn mt-5 rounded-lg px-20 py-3 transition duration-500 hover:text-white"
-                >
-                  SUBMIT
-                </button>
-              </div>
+
+              <button
+                type="submit"
+                className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white"
+              >
+                SUBMIT
+              </button>
             </form>
           </motion.div>
 

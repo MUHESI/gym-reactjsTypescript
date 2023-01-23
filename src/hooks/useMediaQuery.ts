@@ -5,7 +5,6 @@ const useMediaQuery = (query: string) => {
 
   useEffect(() => {
     const media = window.matchMedia(query);
-    console.log('media', media)
     if (media.matches !== matches) {
       setMatches(media.matches);
     }
@@ -14,8 +13,7 @@ const useMediaQuery = (query: string) => {
     return () => window.removeEventListener("resize", listener);
   }, [matches, query]);
 
-
   return matches;
 };
 
-export default useMediaQuery; 
+export default useMediaQuery;
