@@ -62,9 +62,11 @@ const Home = ({ setSelectedPage }: Props) => {
               visible: { opacity: 1, x: 0 },
             }}
           >
-            <ActionButton setSelectedPage={setSelectedPage}>
-              Join Now
-            </ActionButton>
+            {isAboveMediumScreens && (
+              <ActionButton setSelectedPage={setSelectedPage}>
+                Join Now
+              </ActionButton>
+            )}
             <AnchorLink
               className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
               onClick={() => setSelectedPage(SelectedPage.ContactUs)}
