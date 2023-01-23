@@ -1,14 +1,13 @@
 {
   "homepage": "https://MUHESI.github.io/gym-typescript",
-  "name": "gym-typescript",
+  "name": "MAIN-GYM",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "deploy":"gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.13",
