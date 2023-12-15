@@ -1,48 +1,63 @@
 import ActionButton from "@/shared/ActionButton";
 import HText from "@/shared/HText";
 import { BenefitType, SelectedPage } from "@/shared/types";
-import {
-  HomeModernIcon,
-  UserGroupIcon,
-  AcademicCapIcon,
-} from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
-import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png";
+import oeufs from "@/assets/oeufs.png";
+import homePagePoulet from "@/assets/homePagePoulet.jpg";
 import Benefit from "./Benefit";
+import viandeCuiteA from "@/assets/viandeCuiteA.png";
+import viandeCuiteB from "@/assets/viandenoCuiteA.png";
+import pouleord from "@/assets/pouleord.png";
+import { useNavigate } from "react-router-dom";
+import Logo from "../Logo";
+
 
 const benefits: Array<BenefitType> = [
   {
-    icon: <HomeModernIcon className="h-6 w-6" />,
+    icon: <img className=" w-[190px]  h-[190px] cover" alt="..." src={viandeCuiteA} />,
+
     title: "State of the Art Facilities",
     description:
       "Neque adipiscing amet amet enim. Feugiat dolor enim fermentum in a in lectus pellentesque. Ullamcorper et.",
   },
   {
-    icon: <UserGroupIcon className="h-6 w-6" />,
+    icon: <img className="w-[190px] h-[190px] cover" alt="..." src={viandeCuiteB} />,
     title: "100's of Diverse Classes",
     description:
       "Eu ipsum id egestas risus tempus enim semper felis quis. Nec consectetur ac venenatis facilisi est. Eget ac turpis id.",
   },
   {
-    icon: <AcademicCapIcon className="h-6 w-6" />,
+    icon: <img className="w-[190px] h-[190px] cover" alt="..." src={pouleord} />,
+    title: "Expert and Pro Trainers",
+    description:
+      "Fusce vestibulum aliquam ut cras. Nisl lectus egestas sapien nisl. Lacus at mi sit pellentesque. Congue parturient.",
+  },
+  {
+    icon: <img className="w-[190px] h-[190px] cover" alt="..." src={pouleord} />,
+    title: "Expert and Pro Trainers",
+    description:
+      "Fusce vestibulum aliquam ut cras. Nisl lectus egestas sapien nisl. Lacus at mi sit pellentesque. Congue parturient.",
+  },
+  {
+    icon: <img className="w-[190px] h-[190px] cover" alt="..." src={pouleord} />,
+    title: "Expert and Pro Trainers",
+    description:
+      "Fusce vestibulum aliquam ut cras. Nisl lectus egestas sapien nisl. Lacus at mi sit pellentesque. Congue parturient.",
+  },
+  {
+    icon: <img className="w-[190px] h-[190px] cover" alt="..." src={oeufs} />,
     title: "Expert and Pro Trainers",
     description:
       "Fusce vestibulum aliquam ut cras. Nisl lectus egestas sapien nisl. Lacus at mi sit pellentesque. Congue parturient.",
   },
 ];
 
-const container = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.2 },
-  },
-};
-
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Benefits = ({ setSelectedPage }: Props) => {
+const Products = ({ setSelectedPage }: Props) => {
+  const navigate = useNavigate()
   return (
     <section id="benefits" className="mx-auto min-h-full w-5/6 py-20">
       <motion.div
@@ -50,32 +65,24 @@ const Benefits = ({ setSelectedPage }: Props) => {
       >
         {/* HEADER */}
         <motion.div
-          className="md:my-5 md:w-3/5"
+          className="md:my-2 md:w-3/5"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
           variants={{
-            hidden: { opacity: 0, x: -50 },
+            hidden: { opacity: 0, x: 50 },
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <HText>MORE THAN JUST GYM.</HText>
+          <HText>NOS PRODUITS </HText>
           <p className="my-5 text-sm">
-            We provide world class fitness equipment, trainers and classes to
-            get you to your ultimate fitness goals with ease. We provide true
-            care into each and every member.
+            Chez CHIKEN, nous vous offrons tout une gamme des produits et les services, Vous trouverez les produits comme :
           </p>
         </motion.div>
 
         {/* BENEFITS */}
-        <motion.div
-          className="mt-5 items-center justify-between gap-8 md:flex"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={container}
-        >
+        <div className="gap-8 flex-wrap flex justify-center">
           {benefits.map((benefit: BenefitType) => (
             <Benefit
               key={benefit.title}
@@ -85,15 +92,14 @@ const Benefits = ({ setSelectedPage }: Props) => {
               setSelectedPage={setSelectedPage}
             />
           ))}
-        </motion.div>
 
-        {/* GRAPHICS AND DESCRIPTION */}
+        </div>
+
         <div className="mt-16 items-center justify-between gap-20 md:mt-28 md:flex">
-          {/* GRAPHIC */}
           <img
-            className="mx-auto"
+            className="w-[450px] mx-auto rounded-md shadow hover:scale-[1.3] transition "
             alt="benefits-page-graphic"
-            src={BenefitsPageGraphic}
+            src={homePagePoulet}
           />
 
           {/* DESCRIPTION */}
@@ -112,8 +118,8 @@ const Benefits = ({ setSelectedPage }: Props) => {
                   }}
                 >
                   <HText>
-                    MILLIONS OF HAPPY MEMBERS GETTING{" "}
-                    <span className="text-primary-500">FIT</span>
+                    PRIX PROMOTIONNEL EN CETTE FIN DE L’ANNÉE chez
+                    <Logo />
                   </HText>
                 </motion.div>
               </div>
@@ -136,7 +142,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
                 fames vitae vitae quis. Quis amet vulputate tincidunt at in
                 nulla nec. Consequat sed facilisis dui sit egestas ultrices
                 tellus. Ullamcorper arcu id pretium sapien proin integer nisl.
-                Felis orci diam odio.
+                MUHESI.
               </p>
               <p className="mb-5">
                 Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
@@ -147,12 +153,12 @@ const Benefits = ({ setSelectedPage }: Props) => {
             </motion.div>
 
             {/* BUTTON */}
-            <div className="relative mt-16">
-              <div className="w-40 before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
-                <ActionButton setSelectedPage={setSelectedPage}>
-                  Join Now
-                </ActionButton>
-              </div>
+            <div className="flex justify-end  mt-5">
+              <button onClick={() => navigate("/shop")}
+                className="rounded-md px-10 py-2 transition border text-white bg-[#ffc132] hover:bg-white border-[#ffc132] hover:text-[#ffc132]"
+              >
+                Commander
+              </button>
             </div>
           </div>
         </div>
@@ -161,4 +167,4 @@ const Benefits = ({ setSelectedPage }: Props) => {
   );
 };
 
-export default Benefits;
+export default Products;

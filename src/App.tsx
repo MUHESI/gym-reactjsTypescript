@@ -1,11 +1,11 @@
 import Navbar from "@/scenes/navbar";
-import Home from "@/scenes/home";
-import OurClasses from "@/scenes/ourClasses";
-import Benefits from "@/scenes/benefits";
-import ContactUs from "@/scenes/contactUs";
+// import Home from "@/scenes/home";
+// import OurClasses from "@/scenes/ourClasses";
+// import Products from "@/scenes/benefits";
 import Footer from "@/scenes/footer";
 import { useEffect, useState } from "react";
 import { SelectedPage } from "@/shared/types";
+import GlobalRoutes from "./routes/routes";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -26,16 +26,21 @@ function App() {
   }, []);
 
   return (
-    <div className="app bg-gray-20">
+    <div className="app bg-gray-20 flex flex-col justify-between min-h-screen">
       <Navbar
+
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
-      <Home setSelectedPage={setSelectedPage} />
-      <Benefits setSelectedPage={setSelectedPage} />
-      <OurClasses setSelectedPage={setSelectedPage} />
-      <ContactUs setSelectedPage={setSelectedPage} />
+      <div className="bg-[#f8f4eb] flex-grow mt-6">
+        <div className="w-[90%]  mx-auto my-6">
+
+          <GlobalRoutes />
+        </div>
+      </div>
+      {/* <OurClasses setSelectedPage={setSelectedPage} /> */}
+      {/* <ContactUs setSelectedPage={setSelectedPage} /> */}
       <Footer />
     </div>
   );
