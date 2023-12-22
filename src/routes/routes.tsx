@@ -8,7 +8,7 @@ import { Route, Routes } from "react-router-dom";
 
 function GlobalRoutes() {
   return (
-    <div className="bg-white rounded-lg">
+    <div className="rounded-lg bg-[#f8f4eb]">
       <Routes>
         {/* PUBLIC ROUTES */}
         <Route path="/" element={<Home setSelectedPage={(e: any) => console.log("cool")} />} />

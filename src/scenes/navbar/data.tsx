@@ -10,7 +10,7 @@ export const datLinksProducts = [
     },
     {
         icon: <FaProductHunt />,
-        link: 'shop',
+        link: 'products',
         label: "Nos produits"
     },
 ]

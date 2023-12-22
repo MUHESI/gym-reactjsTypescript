@@ -12,6 +12,7 @@ import Carousel from "@/components/core/Carousel";
 import OurVision from "@/components/home/OurVision";
 import Resume from "@/components/home/Resume";
 import FavoritesShop from "@/components/home/OurShop";
+import HText from "@/shared/HText";
 
 
 type Props = {
@@ -134,7 +135,10 @@ const Home = ({ setSelectedPage }: Props) => {
       <>
         <FavoritesShop />
       </>
-      <Products setSelectedPage={(e: any) => console.clear()} />
+      <div>
+        <Products setSelectedPage={(e: any) => console.clear()} />
+      </div>
+
     </section >
   );
 };

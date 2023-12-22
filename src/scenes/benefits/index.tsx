@@ -4,7 +4,7 @@ import { BenefitType, SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import oeufs from "@/assets/oeufs.png";
 import homePagePoulet from "@/assets/homePagePoulet.jpg";
-import Benefit from "./Benefit";
+import ProductCard from "./Benefit";
 import viandeCuiteA from "@/assets/viandeCuiteA.png";
 import viandeCuiteB from "@/assets/viandenoCuiteA.png";
 import pouleord from "@/assets/pouleord.png";
@@ -78,7 +78,7 @@ const Products = ({ setSelectedPage }: Props) => {
         >
           <HText>NOS PRODUITS </HText>
           <p className="my-5 text-sm">
-            Chez CHIKEN, nous vous offrons tout une gamme des produits et les services, Vous trouverez tous nos  produits en cliquant sur voir plus :
+            Chez <Logo />  nous vous offrons tout une gamme des produits et les services, Vous trouverez tous nos  produits en cliquant sur voir plus :
           </p>
         </motion.div>
 

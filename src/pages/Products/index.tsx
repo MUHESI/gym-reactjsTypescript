@@ -11,14 +11,15 @@ import viandeCuiteB from "@/assets/viandenoCuiteA.png";
 import pouleord from "@/assets/pouleord.png";
 import { useNavigate } from "react-router-dom";
 import { benefits } from '@/scenes/benefits';
-import Benefit from '@/scenes/benefits/Benefit';
+import ProductCard from '@/scenes/benefits/Benefit';
+import { dataProducts } from '@/components/core/constantes';
+import { CustomButton } from '@/components/core/CustomButton';
 // import Logo from "../Logo";
-
 
 function ListProducts() {
     const navigate = useNavigate()
     return (
-        <section id="benefitsL" className="mx-auto min-h-full w-5/6 py-20">
+        <div className=" mx-auto min-h-full w-5/6 py-20">
             <motion.div
             // onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
             >
@@ -38,13 +39,13 @@ function ListProducts() {
                 </motion.div>
 
                 {/* BENEFITS */}
-                <div className="gap-8 flex-wrap flex justify-center">
-                    {benefits.map((benefit: BenefitType) => (
-                        <Benefit
-                            key={benefit.title}
-                            icon={benefit.icon}
-                            title={benefit.title}
-                            description={benefit.description}
+                <div className="gap-8 flex  flex-wrap justify-center">
+                    {dataProducts.map((product: any) => (
+                        <ProductCard
+                            key={product.name}
+                            icon={product.img}
+                            title={product.name}
+                            description={product.description}
                             setSelectedPage={() => console.clear()}
                         />
                     ))}
@@ -52,11 +53,26 @@ function ListProducts() {
                 </div>
 
                 <div className="mt-16 items-center justify-between gap-20 md:mt-28 md:flex">
-                    <img
-                        className="w-[450px] mx-auto rounded-md shadow hover:scale-[1.3] transition "
-                        alt="benefits-page-graphic"
-                        src={homePagePoulet}
-                    />
+
+                    <motion.div
+                        className='flex-[90%]'
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                        transition={{ duration: 0.5 }}
+                        variants={{
+                            hidden: { opacity: 0, x: 50 },
+                            visible: { opacity: 1, x: 0 },
+                        }}
+                    >
+                        <img
+
+                            className="md:rotate-12 w-[450px] mx-auto rounded-md shadow hover:scale-[1.3] transition "
+                            alt="benefits-page-graphic"
+                            src={homePagePoulet}
+                        />
+                    </motion.div>
+
 
                     {/* DESCRIPTION */}
                     <div>
@@ -92,34 +108,28 @@ function ListProducts() {
                                 visible: { opacity: 1, x: 0 },
                             }}
                         >
-                            <p className="my-5">
-                                Nascetur aenean massa auctor tincidunt. Iaculis potenti amet
-                                egestas ultrices consectetur adipiscing ultricies enim. Pulvinar
-                                fames vitae vitae quis. Quis amet vulputate tincidunt at in
-                                nulla nec. Consequat sed facilisis dui sit egestas ultrices
-                                tellus. Ullamcorper arcu id pretium sapien proin integer nisl.
-                                MUHESI.
+                            <div className='mt-2 md:mt-0 text-center '>
+                                <HText> La quanité et la qualité chez nous</HText>
+
+                            </div>
+                            <p className="my-5 text-justify">
+                                Vous cherchez des poulets de chair juteux et savoureux ? Ne cherchez plus ! Nos poulets de chair sont élevés avec amour, sans antibiotiques ni hormones. Ils grandissent dans des conditions optimales, se préparant à devenir les stars de vos repas en famille. Que ce soit pour un barbecue, un rôti ou un plat mijoté, nos poulets de chair sont prêts à régaler vos papilles.
                             </p>
-                            <p className="mb-5">
-                                Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
-                                tellus quam porttitor. Mauris velit euismod elementum arcu neque
-                                facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit
-                                enim mattis odio in risus nunc.
+                            <p className="mb-5 text-justify">
+                                Des poules bien nourries sont des poules heureuses. Notre gamme d’aliments pour poules est spécialement formulée pour garantir une croissance saine, des plumes brillantes et des œufs délicieux. De l’aliment de démarrage à l’aliment de ponte, nous avons tout ce dont vos poules ont besoin. Parce que des poules bien nourries pondent des œufs de qualité supérieure.
                             </p>
                         </motion.div>
-
-                        {/* BUTTON */}
-                        <div className="flex justify-end  mt-5">
-                            <button onClick={() => navigate("/shop")}
-                                className="rounded-md px-10 py-2 transition border text-white bg-[#ffc132] hover:bg-white border-[#ffc132] hover:text-[#ffc132]"
-                            >
-                                Commander
-                            </button>
+                        <div className='flex  justify-end  py-2  px-2'>
+                            <CustomButton
+                                className='bg-[#ffc132] hover:bg-transparent'
+                                label='Lire plus'
+                                onClick={() => navigate('/shop')}
+                            />
                         </div>
                     </div>
                 </div>
             </motion.div>
-        </section>
+        </div>
     );
 }
 
