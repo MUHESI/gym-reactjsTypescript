@@ -6,13 +6,16 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import { FiShoppingCart } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import Logo from "../Logo";
-
+import NavbarMenu from "./NavbarMenu";
+import { datLinksPartners, datLinksProducts, datLinksShop } from "./data";
 
 type Props = {
   isTopOfPage: boolean;
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
 };
+
+
 
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const navigate = useNavigate()
@@ -39,17 +42,21 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                     page="Accueil"
                     selectedPage={selectedPage}
                   />
-                  <Link
+                  {/* <Link
                     link="/shop"
                     page="Commander"
                     selectedPage={selectedPage}
-                  />
-                  <span
+                  /> */}
+
+                  <NavbarMenu mainTitle="Produits" links={datLinksProducts} />
+                  <NavbarMenu mainTitle="Partenariants" links={datLinksPartners} />
+                  <NavbarMenu mainTitle="Shop" links={datLinksShop} />
+                  {/* <span
                     className={`cursor-pointer text-primary-500 transition duration-500 hover:text-primary-300 `}
                     onClick={() => navigate('/')}
                   >
                     Hello, MUHESI
-                  </span>
+                  </span> */}
                 </div>
                 <div className={` ml-10 flex justify-end gap-8`}>
                   <button className=""
@@ -91,7 +98,10 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               link="/"
               selectedPage={selectedPage}
             />
-            <Link
+            {/* <NavbarMenu mainTitle="Produits" links={datLinksProducts} />
+            <NavbarMenu mainTitle="Partenariants" links={datLinksPartners} />
+            <NavbarMenu mainTitle="Shop" links={datLinksShop} /> */}
+            {/* <Link
               link="/shop"
               page="Commander"
               selectedPage={selectedPage}
@@ -101,7 +111,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               onClick={() => navigate('/')}
             >
               Hello, MUHESI
-            </span>
+            </span> */}
           </div>
           <div className={`mt-5 flex justify-center gap-8`}>
             <button className=""

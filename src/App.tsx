@@ -6,6 +6,8 @@ import Footer from "@/scenes/footer";
 import { useEffect, useState } from "react";
 import { SelectedPage } from "@/shared/types";
 import GlobalRoutes from "./routes/routes";
+import { Button } from "./components/ui/button";
+import Carousel from "./components/core/Carousel";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -27,6 +29,8 @@ function App() {
 
   return (
     <div className="app bg-gray-20 flex flex-col justify-between min-h-screen">
+      {/* <Button className="bg-red-400"> Test</Button> */}
+
       <Navbar
 
         isTopOfPage={isTopOfPage}
@@ -35,7 +39,6 @@ function App() {
       />
       <div className="bg-[#f8f4eb] flex-grow mt-6">
         <div className="w-[90%]  mx-auto my-6">
-
           <GlobalRoutes />
         </div>
       </div>

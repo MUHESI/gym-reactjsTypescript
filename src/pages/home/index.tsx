@@ -8,6 +8,10 @@ import Products from "@/scenes/benefits";
 import { useNavigate } from "react-router-dom";
 import Logo from "@/scenes/Logo";
 import ArrowImg from "@/assets/Sparkles.png";
+import Carousel from "@/components/core/Carousel";
+import OurVision from "@/components/home/OurVision";
+import Resume from "@/components/home/Resume";
+import FavoritesShop from "@/components/home/OurShop";
 
 
 type Props = {
@@ -20,6 +24,10 @@ const Home = ({ setSelectedPage }: Props) => {
 
   return (
     <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
+      {/* CAROUSEL*/}
+      <>
+        <Carousel />
+      </>
       {/* IMAGE AND MAIN HEADER */}
       <motion.div
         className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
@@ -101,8 +109,16 @@ const Home = ({ setSelectedPage }: Props) => {
             alt="..." src={ArrowImg} />
         </div>
       </motion.div>
+      {/* OUR VISION */}
+      <>
+        <OurVision />
+      </>
 
-      {
+      {/* RESUME */}
+      <>
+        <Resume />
+      </>
+      {/* {
         isAboveMediumScreens && (
           <div className=" shadow rounded mt-10 mx-2 bg-primary-100 py-10">
             <div className="mx-auto  w-5/6">
@@ -114,7 +130,10 @@ const Home = ({ setSelectedPage }: Props) => {
             </div>
           </div>
         )
-      }
+      } */}
+      <>
+        <FavoritesShop />
+      </>
       <Products setSelectedPage={(e: any) => console.clear()} />
     </section >
   );
