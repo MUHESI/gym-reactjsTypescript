@@ -20,12 +20,13 @@ interface ILinks {
 interface IPropsNavbarMenuList {
     mainTitle: string;
     links: ILinks[]
+    isTopOfPage?: boolean
 }
 
 // TODO: Improve late
 function NavbarMenuItems({
     mainTitle,
-    links
+    links,
 }: IPropsNavbarMenuList) {
     const navigate = useNavigate()
 
@@ -33,9 +34,10 @@ function NavbarMenuItems({
         <NavigationMenu>
             <NavigationMenuList className=''>
                 <NavigationMenuItem className='max-w-[90px]'>
-                    <NavigationMenuTrigger>{mainTitle}</NavigationMenuTrigger>
-                    <NavigationMenuContent className='bg-white min-w-[200px]  rounded-md px-2 py-2  border border-1 rounded-md'>
-                        {links.map((item: ILinks, key: number) => <NavigationMenuLink onClick={() => navigate(`/${item.link}`)} key={key} className='block cursor-pointer py-2 transition hover:bg-primary-500  hover:text-white px-1 rounded'>{item.label}</NavigationMenuLink>)}
+                    {/* <NavigationMenuTrigger className={`font-bold active:text-secondary-500 hover:text-secondary-500 ${isTopOfPage ? "text-primary-100 active:text-secondary-500 hover:text-secondary-500" : "text-white"} `} >{mainTitle}</NavigationMenuTrigger> */}
+                    <NavigationMenuTrigger className={`font-bold text-white`} >{mainTitle}</NavigationMenuTrigger>
+                    <NavigationMenuContent className='bg-white text-primary-100 min-w-[200px]   rounded-md px-2 py-2   border border-1 rounded-md '>
+                        {links.map((item: ILinks, key: number) => <NavigationMenuLink onClick={() => navigate(`/${item.link}`)} key={key} className='block font-bold cursor-pointer py-2 transition hover:bg-secondary-500  hover:text-white px-1 rounded'>{item.label}</NavigationMenuLink>)}
                     </NavigationMenuContent>
                 </NavigationMenuItem>
             </NavigationMenuList>

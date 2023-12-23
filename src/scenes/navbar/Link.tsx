@@ -15,8 +15,8 @@ const Link = ({ link, page, selectedPage }: Props) => {
 
   return (
     <span
-      className={`cursor-pointer ${selectedPage === lowerCasePage ? "text-primary-500" : ""}
-        transition duration-500 hover:text-primary-300
+      className={`cursor-pointer text-white ${selectedPage === lowerCasePage ? "text-primary-100" : ""}
+        transition duration-500 hover:text-text-white
       `}
 
       onClick={() => navigate(link)}

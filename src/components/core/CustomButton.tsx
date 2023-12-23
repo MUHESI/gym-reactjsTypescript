@@ -3,7 +3,7 @@ import { FiRefreshCcw } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 
 // AUTH
-interface IpropsAuthButton {
+interface IPropsAuthButton {
   statusLoading?: boolean;
   onClick: () => void;
   label: string;
@@ -16,14 +16,14 @@ export function CustomButton({
   label,
   disabled,
   className,
-}: IpropsAuthButton) {
+}: IPropsAuthButton) {
   return (
     <button
       onClick={onClick}
       disabled={statusLoading || disabled}
       style={{ height: "30px" }}
       className={cn(
-        "flex items-center justify-center gap-4 border border-transparent border-primary-500 duration-300 text-sm px-8 cursor-pointer border-transparent  font-semibold hover:border-primary-500 rounded-full   md:px-5 ",
+        "flex items-center justify-center gap-4 border border-transparent border-primary-100 duration-300 text-sm px-8 cursor-pointer border-transparent  font-semibold hover:border-secondary-500 rounded-full   md:px-5 ",
         className
       )}
     >
@@ -33,7 +33,7 @@ export function CustomButton({
         </span>
       )}
       <span className={`${statusLoading && ""}`}>
-        {statusLoading ? "Chargement" : label}
+        {statusLoading ? "Chargement..." : label}
       </span>
     </button>
   );

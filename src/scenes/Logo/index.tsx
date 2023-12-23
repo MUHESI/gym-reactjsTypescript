@@ -4,7 +4,7 @@ function Logo() {
 
     return (
         <span className='flex gap-3 font-bold'>
-            <span className='text-primary-500'>BUKAVU
+            <span className='text-secondary-100'>BUKAVU
             </span> Chicks
         </span>
     )

@@ -36,8 +36,6 @@ export default function DialogCustom({
   width,
   children,
   mainTitle,
-  // btnText,
-  // classNameBtn,
   lastBtnOptions,
   mainBtnOptions,
   openDilog,

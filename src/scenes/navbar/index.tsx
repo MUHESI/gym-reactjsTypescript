@@ -8,15 +8,13 @@ import { useNavigate } from "react-router-dom";
 import Logo from "../Logo";
 import NavbarMenu from "./NavbarMenu";
 import { datLinksPartners, datLinksProducts, datLinksShop } from "./data";
+import { FaCartShopping } from "react-icons/fa6";
 
 type Props = {
   isTopOfPage: boolean;
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
 };
-
-
-
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const navigate = useNavigate()
   const flexBetween = "flex items-center justify-between";
@@ -25,9 +23,10 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
 
   return (
-    <nav className="">
+    <nav className="text-white font-bold">
       <div
-        className={`shadow ${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}
+        // className={`shadow ${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}
+        className={`shadow bg-primary-100 ${flexBetween} fixed top-0 z-30 w-full py-5`}
       >
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
@@ -48,9 +47,9 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                     selectedPage={selectedPage}
                   /> */}
 
-                  <NavbarMenu mainTitle="Produits" links={datLinksProducts} />
-                  <NavbarMenu mainTitle="Partenariants" links={datLinksPartners} />
-                  <NavbarMenu mainTitle="Shop" links={datLinksShop} />
+                  <NavbarMenu isTopOfPage={isTopOfPage} mainTitle="Produits" links={datLinksProducts} />
+                  <NavbarMenu isTopOfPage={isTopOfPage} mainTitle="Partenariants" links={datLinksPartners} />
+                  <NavbarMenu isTopOfPage={isTopOfPage} mainTitle="Shop" links={datLinksShop} />
                   {/* <span
                     className={`cursor-pointer text-primary-500 transition duration-500 hover:text-primary-300 `}
                     onClick={() => navigate('/')}
@@ -62,7 +61,13 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                   <button className=""
                     onClick={() => navigate('/list-command')}
                   >
-                    <FiShoppingCart />
+                    <FaCartShopping
+                      size={20}
+                      style={{
+                        fontFamily: "bold"
+                      }}
+                      className="text-secondary-100 font-bold"
+                    />
                   </button>
 
                 </div>

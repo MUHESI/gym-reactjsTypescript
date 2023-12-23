@@ -10,10 +10,11 @@ import viandeCuiteA from "@/assets/viandeCuiteA.png";
 import viandeCuiteB from "@/assets/viandenoCuiteA.png";
 import pouleord from "@/assets/pouleord.png";
 import { useNavigate } from "react-router-dom";
-import { benefits } from '@/scenes/benefits';
-import ProductCard from '@/scenes/benefits/Benefit';
-import { dataProducts } from '@/components/core/constantes';
+// import { benefits } from '@/scenes/benefits';
+// import ProductCard from '@/scenes/benefits/Benefit';
+import { dataProducts } from '@/components/constantes';
 import { CustomButton } from '@/components/core/CustomButton';
+import ProductCard from '@/components/productCard';
 // import Logo from "../Logo";
 
 function ListProducts() {

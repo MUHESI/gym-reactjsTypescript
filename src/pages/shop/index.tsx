@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { MdOutlineAddShoppingCart } from "react-icons/md"
 import DialogCustom from '@/components/core/DialogCustom';
 import CardPanier from '../cardProduct';
-import { dataCards } from '@/components/core/constantes';
+import { dataCards } from '@/components/constantes';
 
 function Shop() {
     return (
@@ -25,7 +25,7 @@ function Shop() {
                 <div className='flex gap-5 flex-wrap  justify-center'>
                     {dataCards.map((item, key) =>
                         <div key={key}
-                            className='cursor-pointer  border  rounded-md  flex-grow p-5 transition hover:shadow '>
+                            className='cursor-pointer  border  rounded-xl  flex-grow p-5 transition hover:shadow '>
                             <div className='flex justify-center'>
                                 <img className='w-[200px] rounded-md ' alt="..." src={item.img} />
                             </div>
@@ -91,12 +91,10 @@ function Select() {
 
     return (
         <div>
-            <select className='py-1 px-1 border border-[#5d0000] rounded-md focus:border-none bg-[#f8f4eb]' onChange={(e: any) => setValue_(e.target.value)}>
-                <option value={value_} >Choisir</option>
+            <select className='py-1 px-1 border border-[#5d0000] rounded-xl px-2 focus:border-none bg-[#f8f4eb]' onChange={(e: any) => setValue_(e.target.value)}>
+                <option value={value_} >Filter </option>
                 {data.map((item) => <option value={item.id}>{item.value}</option>)}
             </select>
         </div>
     )
 }
-
-// export default Select

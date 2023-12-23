@@ -11,7 +11,7 @@ function GlobalRoutes() {
     <div className="rounded-lg bg-[#f8f4eb]">
       <Routes>
         {/* PUBLIC ROUTES */}
-        <Route path="/" element={<Home setSelectedPage={(e: any) => console.log("cool")} />} />
+        <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/list-command" element={<ListCommand />} />
         <Route path="/products/" element={<ListProducts />} />

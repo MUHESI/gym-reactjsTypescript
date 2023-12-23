@@ -2,12 +2,12 @@ import Navbar from "@/scenes/navbar";
 // import Home from "@/scenes/home";
 // import OurClasses from "@/scenes/ourClasses";
 // import Products from "@/scenes/benefits";
-import Footer from "@/scenes/footer";
+import Footer from "@/components/shared/footer";
 import { useEffect, useState } from "react";
 import { SelectedPage } from "@/shared/types";
 import GlobalRoutes from "./routes/routes";
 import { Button } from "./components/ui/button";
-import Carousel from "./components/core/Carousel";
+import Carousel from "./components/home/Carousel";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
